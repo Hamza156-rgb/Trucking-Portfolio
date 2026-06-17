@@ -57,8 +57,9 @@ function Services() {
         <Reveal className="section-head">
           <span className="eyebrow">What we do</span>
           <h2>Freight handled end to end.</h2>
-          <p>From sourcing the load to the final signature, Excel Hauling keeps every
-            move organized, tracked, and on time.</p>
+          <p>From the first call to the final signature, Excel Hauling moves your
+            freight direct — organized, tracked, and on time, with no broker in
+            the middle.</p>
         </Reveal>
         <div className="cards">
           {services.map((s, i) => {
@@ -207,7 +208,7 @@ function Testimonials() {
     <section className="section">
       <div className="wrap">
         <Reveal className="section-head">
-          <span className="eyebrow">Shippers &amp; brokers</span>
+          <span className="eyebrow">What shippers say</span>
           <h2>Trusted to deliver.</h2>
         </Reveal>
         <div className="quotes">
@@ -245,7 +246,7 @@ function Contact() {
           <div className="row">
             <span className="ic"><Icon.Phone /></span>
             <div>
-              <div className="k">Call dispatch</div>
+              <div className="k">Call us direct</div>
               <a className="v" href={company.phoneHref}>{company.phone}</a>
             </div>
           </div>
@@ -335,8 +336,8 @@ function Footer() {
                 <span>LLC</span>
               </span>
             </div>
-            <p>Reliable box-truck freight and dispatch across the Northeast corridor.
-              Booked fast, tracked closely, delivered on time.</p>
+            <p>Reliable box-truck freight capacity across the Northeast corridor.
+              Book direct with the carrier — tracked closely, delivered on time.</p>
             <div className="footer-credentials">
               <span className="tag"><span className="dot"></span>MC# {company.mc}</span>
               <span className="tag"><span className="dot"></span>{company.equipment}</span>
@@ -352,7 +353,7 @@ function Footer() {
             </ul>
           </div>
           <div>
-            <h4>Dispatch</h4>
+            <h4>Book a load</h4>
             <ul>
               <li><a href={company.phoneHref}>{company.phone}</a></li>
               <li><a href="#contact">Request a quote</a></li>

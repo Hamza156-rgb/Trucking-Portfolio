@@ -13,9 +13,9 @@ export default function Hero() {
             Keep your freight <span className="accent">rolling.</span>
           </h1>
           <p className="lede">
-            {company.name} runs reliable box-truck freight and dispatch across the
-            Northeast corridor — booked fast, tracked closely, and delivered right
-            on schedule.
+            {company.name} moves freight direct for shippers across the Northeast
+            corridor — book the truck straight from the carrier, no broker in the
+            middle, tracked closely and delivered on schedule.
           </p>
           <div className="hero-cta">
             <a className="btn btn-primary" href={company.phoneHref}>
@@ -32,10 +32,10 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Dispatch-ticket side panel */}
+        {/* Capacity side panel */}
         <div className="ticket" aria-hidden="true">
           <div className="ticket-head">
-            <span>Dispatch Sheet</span>
+            <span>Available Capacity</span>
             <span className="live"><i></i> Available now</span>
           </div>
           <div className="ticket-row">
