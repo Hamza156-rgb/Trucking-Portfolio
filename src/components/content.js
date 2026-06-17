@@ -16,6 +16,12 @@ export const company = {
   equipment: '26 ft Box Truck',
 }
 
+// AI chatbot widget. Paste the bot id from your Chatbase dashboard here.
+// Leave it as '' to disable the widget (e.g. while developing locally).
+export const chatbot = {
+  chatbaseId: 'ud0p63eIfmbjWHuMRJYNj',   // from the Chatbase embed snippet
+}
+
 export const stats = [
   { num: '98', suffix: '%', label: 'On-time delivery' },
   { num: '1,200', suffix: '+', label: 'Loads delivered' },

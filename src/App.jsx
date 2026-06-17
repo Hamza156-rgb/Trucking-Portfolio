@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
 import Reveal from './components/Reveal.jsx'
+import Chatbot from './components/Chatbot.jsx'
 import * as Icon from './components/icons.jsx'
 import {
   company, stats, services, specs, steps, regions, lanes, testimonials,
@@ -388,6 +389,7 @@ export default function App() {
       <Road />
       <Contact />
       <Footer />
+      <Chatbot />
     </>
   )
 }
