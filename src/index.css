@@ -129,7 +129,7 @@ img { max-width: 100%; display: block; }
   gap: 12px;
   color: #fff;
 }
-.logo-mark { width: 34px; height: 34px; flex: none; }
+.logo-mark { width: 38px; height: 38px; flex: none; border-radius: 9px; object-fit: cover; display: block; }
 .logo-text { line-height: 1; }
 .logo-text strong {
   font-family: var(--font-display);

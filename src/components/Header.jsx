@@ -10,14 +10,10 @@ export default function Header() {
     <header className="header">
       <div className="wrap">
         <a href="#top" className="logo" onClick={close}>
-          <svg className="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
-            <rect width="64" height="64" rx="12" fill="#FFB300" />
-            <path d="M14 44 L27 18 L35 18 L22 44 Z" fill="#12161D" />
-            <path d="M31 44 L44 18 L52 18 L39 44 Z" fill="#12161D" />
-          </svg>
+          <img className="logo-mark" src="/logo-icon.png" alt="Excel Hauling" />
           <span className="logo-text">
             <strong>EXCEL HAULING</strong>
-            <span>MC# {company.mc}</span>
+            <span>FREIGHT CARRIER · LLC</span>
           </span>
         </a>
 

@@ -396,14 +396,10 @@ function Footer() {
         <div className="footer-top">
           <div>
             <div className="logo" style={{ marginBottom: 16 }}>
-              <svg className="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
-                <rect width="64" height="64" rx="12" fill="#FFB300" />
-                <path d="M14 44 L27 18 L35 18 L22 44 Z" fill="#12161D" />
-                <path d="M31 44 L44 18 L52 18 L39 44 Z" fill="#12161D" />
-              </svg>
+              <img className="logo-mark" src="/logo-icon.png" alt="Excel Hauling" />
               <span className="logo-text">
                 <strong style={{ color: '#fff' }}>EXCEL HAULING</strong>
-                <span>LLC</span>
+                <span>FREIGHT CARRIER · LLC</span>
               </span>
             </div>
             <p>Reliable box-truck freight capacity across the Northeast corridor.
