@@ -12,7 +12,7 @@ export const company = {
   phoneHref: 'tel:+12676788860',
   email: 'loads@excelhauling.com',     // placeholder
   region: 'Greater Philadelphia · Northeast Corridor',
-  hours: 'Mon–Sat · 6:00 AM – 8:00 PM',
+  hours: 'Mon–Fri · 6:00 AM – 8:00 PM',
   equipment: '26 ft Box Truck',
 }
 
@@ -40,7 +40,9 @@ export const services = [
 
 export const specs = [
   { k: 'Vehicle', v: '26 ft Box Truck' },
-  { k: 'Cargo space', v: '≈ 1,800 cu ft' },
+  { k: 'Deck space', v: '26 ft' },
+  { k: 'Door clearance', v: '96 in' },
+  { k: 'Inside dimensions', v: '102 in H × 103 in W' },
   { k: 'Max payload', v: 'up to 10,000 lbs' },
   { k: 'Pallet capacity', v: '≈ 12 pallets' },
   { k: 'Loading', v: 'Rear roll-up + liftgate' },
@@ -57,7 +59,7 @@ export const steps = [
 // Hub first, then the corridor states.
 export const regions = [
   { name: 'Philadelphia, PA', hub: true },
-  { name: 'New Jersey' }, { name: 'New York' }, { name: 'Delaware' },
+  { name: 'New Jersey' }, { name: 'Upstate New York' }, { name: 'Delaware' },
   { name: 'Maryland' }, { name: 'Connecticut' }, { name: 'Massachusetts' },
   { name: 'Virginia' }, { name: 'Washington, D.C.' },
 ]

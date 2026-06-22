@@ -291,24 +291,64 @@ function Contact() {
                 <input type="tel" placeholder="(000) 000-0000" required />
               </div>
             </div>
-            <div className="field">
-              <label>Company</label>
-              <input type="text" placeholder="Company name" />
-            </div>
             <div className="two">
               <div className="field">
-                <label>Pickup</label>
-                <input type="text" placeholder="City, ST" required />
+                <label>Email</label>
+                <input type="email" placeholder="you@company.com" required />
               </div>
               <div className="field">
-                <label>Delivery</label>
-                <input type="text" placeholder="City, ST" required />
+                <label>Company</label>
+                <input type="text" placeholder="Company name" />
               </div>
             </div>
-            <div className="field">
-              <label>Load details</label>
-              <textarea placeholder="Weight, pallets, timing, anything we should know…" />
+
+            <div className="form-group">
+              <span className="form-group-label">Quote details</span>
+              <div className="two">
+                <div className="field">
+                  <label>Pickup — time &amp; date</label>
+                  <input type="text" placeholder="e.g. Jun 24, 8:00 AM" required />
+                </div>
+                <div className="field">
+                  <label>Pickup — location / ZIP</label>
+                  <input type="text" placeholder="City, ST or ZIP" required />
+                </div>
+              </div>
+              <div className="two">
+                <div className="field">
+                  <label>Delivery — time &amp; date</label>
+                  <input type="text" placeholder="e.g. Jun 25, 2:00 PM" required />
+                </div>
+                <div className="field">
+                  <label>Delivery — location / ZIP</label>
+                  <input type="text" placeholder="City, ST or ZIP" required />
+                </div>
+              </div>
             </div>
+
+            <div className="form-group">
+              <span className="form-group-label">Load details</span>
+              <div className="two">
+                <div className="field">
+                  <label>Commodity</label>
+                  <input type="text" placeholder="What are we hauling?" required />
+                </div>
+                <div className="field">
+                  <label>Weight</label>
+                  <input type="text" placeholder="e.g. 6,000 lbs" required />
+                </div>
+              </div>
+              <div className="field">
+                <label>Dimensions</label>
+                <input type="text" placeholder="L × W × H, or pallet count" required />
+              </div>
+            </div>
+
+            <div className="field">
+              <label>Your rate <span className="optional">(optional)</span></label>
+              <input type="text" placeholder="Name your rate, or we’ll quote you directly" />
+            </div>
+
             <button className="btn btn-primary" type="submit">
               Request a quote <Icon.Arrow />
             </button>

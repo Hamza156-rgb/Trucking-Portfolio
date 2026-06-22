@@ -616,6 +616,22 @@ section { position: relative; }
 .form input:focus, .form textarea:focus { outline: none; border-color: var(--signal); }
 .form textarea { resize: vertical; min-height: 96px; }
 .form .btn { width: 100%; justify-content: center; margin-top: 4px; }
+.form .form-group {
+  border-top: 1px solid var(--line-dark);
+  padding-top: 20px;
+  margin-bottom: 18px;
+}
+.form .form-group-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--signal); margin-bottom: 14px;
+}
+.form .field label .optional {
+  color: var(--steel-2);
+  text-transform: none;
+  letter-spacing: 0;
+}
 .form .ok {
   background: rgba(255,179,0,0.12);
   border: 1px solid var(--signal);
