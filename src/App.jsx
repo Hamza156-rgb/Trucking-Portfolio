@@ -260,57 +260,66 @@ function Contact() {
   }
   return (
     <section className="section dark" id="contact">
-      <div className="wrap contact-grid">
-        <Reveal className="contact-info">
+      <div className="wrap">
+        <Reveal className="contact-head">
           <span className="eyebrow on-dark">Get a quote</span>
-          <h2 style={{ fontSize: 'clamp(30px,4vw,46px)', margin: '16px 0 28px' }}>
+          <h2 style={{ fontSize: 'clamp(30px,4vw,46px)', margin: '16px 0 12px' }}>
             Ready to move a load?
           </h2>
-          <div className="row">
+          <p style={{ color: '#AEB6C1', margin: 0, maxWidth: 620 }}>
+            Send us the load details and we’ll get a rate back fast — call, WhatsApp,
+            or fill out the form below.
+          </p>
+        </Reveal>
+
+        <Reveal className="contact-bar">
+          <a className="cbar-item" href={company.phoneHref}>
             <span className="ic"><Icon.Phone /></span>
-            <div>
-              <div className="k">Call us direct</div>
-              <a className="v" href={company.phoneHref}>{company.phone}</a>
-            </div>
-          </div>
-          <div className="row">
+            <span className="cbar-txt">
+              <span className="k">Call us direct</span>
+              <span className="v">{company.phone}</span>
+            </span>
+          </a>
+          <a className="cbar-item" href={company.whatsappHref} target="_blank" rel="noopener noreferrer">
             <span className="ic ic-wa"><Icon.WhatsApp /></span>
-            <div>
-              <div className="k">WhatsApp</div>
-              <a className="v" href={company.whatsappHref} target="_blank" rel="noopener noreferrer">{company.phone}</a>
-            </div>
-          </div>
-          <div className="row">
+            <span className="cbar-txt">
+              <span className="k">WhatsApp</span>
+              <span className="v">{company.phone}</span>
+            </span>
+          </a>
+          <div className="cbar-item">
             <span className="ic"><Icon.Shield /></span>
-            <div>
-              <div className="k">MC Number</div>
-              <div className="v">{company.mc}</div>
-            </div>
+            <span className="cbar-txt">
+              <span className="k">MC Number</span>
+              <span className="v">{company.mc}</span>
+            </span>
           </div>
-          <div className="row">
+          <div className="cbar-item">
             <span className="ic"><Icon.Clock /></span>
-            <div>
-              <div className="k">Hours</div>
-              <div className="v">{company.hours}</div>
-            </div>
+            <span className="cbar-txt">
+              <span className="k">Hours</span>
+              <span className="v">{company.hours}</span>
+            </span>
           </div>
-          <div className="row">
+          <div className="cbar-item">
             <span className="ic"><Icon.Pin /></span>
-            <div>
-              <div className="k">Service area</div>
-              <div className="v">{company.region}</div>
-            </div>
+            <span className="cbar-txt">
+              <span className="k">Service area</span>
+              <span className="v">{company.region}</span>
+            </span>
           </div>
         </Reveal>
 
         <Reveal delay={120}>
-          <form className="form" onSubmit={onSubmit}>
+          <form className="form form-wide" onSubmit={onSubmit}>
             {sent && (
               <div className="ok">
                 ✓ Opening WhatsApp with your details — just hit send to reach us. We’ll reply shortly.
               </div>
             )}
-            <div className="two">
+
+            <span className="form-group-label">Your contact</span>
+            <div className="grid">
               <div className="field">
                 <label>Your name</label>
                 <input type="text" name="name" placeholder="Full name" required />
@@ -319,8 +328,6 @@ function Contact() {
                 <label>Phone</label>
                 <input type="tel" name="phone" placeholder="(000) 000-0000" required />
               </div>
-            </div>
-            <div className="two">
               <div className="field">
                 <label>Email</label>
                 <input type="email" name="email" placeholder="you@company.com" required />
@@ -333,7 +340,7 @@ function Contact() {
 
             <div className="form-group">
               <span className="form-group-label">Quote details</span>
-              <div className="two">
+              <div className="grid">
                 <div className="field">
                   <label>Pickup — time &amp; date</label>
                   <input type="text" name="pickup_when" placeholder="e.g. Jun 24, 8:00 AM" required />
@@ -342,8 +349,6 @@ function Contact() {
                   <label>Pickup — location / ZIP</label>
                   <input type="text" name="pickup_where" placeholder="City, ST or ZIP" required />
                 </div>
-              </div>
-              <div className="two">
                 <div className="field">
                   <label>Delivery — time &amp; date</label>
                   <input type="text" name="delivery_when" placeholder="e.g. Jun 25, 2:00 PM" required />
@@ -357,7 +362,7 @@ function Contact() {
 
             <div className="form-group">
               <span className="form-group-label">Load details</span>
-              <div className="two">
+              <div className="grid">
                 <div className="field">
                   <label>Commodity</label>
                   <input type="text" name="commodity" placeholder="What are we hauling?" required />
@@ -366,16 +371,15 @@ function Contact() {
                   <label>Weight</label>
                   <input type="text" name="weight" placeholder="e.g. 6,000 lbs" required />
                 </div>
+                <div className="field">
+                  <label>Dimensions</label>
+                  <input type="text" name="dimensions" placeholder="L × W × H, or pallet count" required />
+                </div>
+                <div className="field">
+                  <label>Your rate</label>
+                  <input type="text" name="rate" placeholder="e.g. $850" required />
+                </div>
               </div>
-              <div className="field">
-                <label>Dimensions</label>
-                <input type="text" name="dimensions" placeholder="L × W × H, or pallet count" required />
-              </div>
-            </div>
-
-            <div className="field">
-              <label>Your rate <span className="optional">(optional)</span></label>
-              <input type="text" name="rate" placeholder="Name your rate, or we’ll quote you directly" />
             </div>
 
             <button className="btn btn-primary" type="submit">
