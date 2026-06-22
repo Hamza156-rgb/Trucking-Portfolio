@@ -234,6 +234,28 @@ function Contact() {
   const [sent, setSent] = useState(false)
   const onSubmit = (e) => {
     e.preventDefault()
+    const f = new FormData(e.target)
+    const v = (k) => (f.get(k) || '').toString().trim()
+    const lines = [
+      '*New quote request — Excel Hauling*',
+      '',
+      `*Name:* ${v('name')}`,
+      `*Phone:* ${v('phone')}`,
+      `*Email:* ${v('email')}`,
+      v('company') && `*Company:* ${v('company')}`,
+      '',
+      '*Quote details*',
+      `*Pickup:* ${v('pickup_when')} — ${v('pickup_where')}`,
+      `*Delivery:* ${v('delivery_when')} — ${v('delivery_where')}`,
+      '',
+      '*Load details*',
+      `*Commodity:* ${v('commodity')}`,
+      `*Weight:* ${v('weight')}`,
+      `*Dimensions:* ${v('dimensions')}`,
+      v('rate') && `*Rate:* ${v('rate')}`,
+    ].filter(Boolean)
+    const url = `${company.whatsappHref}?text=${encodeURIComponent(lines.join('\n'))}`
+    window.open(url, '_blank', 'noopener,noreferrer')
     setSent(true)
   }
   return (
@@ -249,6 +271,13 @@ function Contact() {
             <div>
               <div className="k">Call us direct</div>
               <a className="v" href={company.phoneHref}>{company.phone}</a>
+            </div>
+          </div>
+          <div className="row">
+            <span className="ic ic-wa"><Icon.WhatsApp /></span>
+            <div>
+              <div className="k">WhatsApp</div>
+              <a className="v" href={company.whatsappHref} target="_blank" rel="noopener noreferrer">{company.phone}</a>
             </div>
           </div>
           <div className="row">
@@ -278,27 +307,27 @@ function Contact() {
           <form className="form" onSubmit={onSubmit}>
             {sent && (
               <div className="ok">
-                ✓ Thanks — your request was received. We’ll call you back shortly.
+                ✓ Opening WhatsApp with your details — just hit send to reach us. We’ll reply shortly.
               </div>
             )}
             <div className="two">
               <div className="field">
                 <label>Your name</label>
-                <input type="text" placeholder="Full name" required />
+                <input type="text" name="name" placeholder="Full name" required />
               </div>
               <div className="field">
                 <label>Phone</label>
-                <input type="tel" placeholder="(000) 000-0000" required />
+                <input type="tel" name="phone" placeholder="(000) 000-0000" required />
               </div>
             </div>
             <div className="two">
               <div className="field">
                 <label>Email</label>
-                <input type="email" placeholder="you@company.com" required />
+                <input type="email" name="email" placeholder="you@company.com" required />
               </div>
               <div className="field">
                 <label>Company</label>
-                <input type="text" placeholder="Company name" />
+                <input type="text" name="company" placeholder="Company name" />
               </div>
             </div>
 
@@ -307,21 +336,21 @@ function Contact() {
               <div className="two">
                 <div className="field">
                   <label>Pickup — time &amp; date</label>
-                  <input type="text" placeholder="e.g. Jun 24, 8:00 AM" required />
+                  <input type="text" name="pickup_when" placeholder="e.g. Jun 24, 8:00 AM" required />
                 </div>
                 <div className="field">
                   <label>Pickup — location / ZIP</label>
-                  <input type="text" placeholder="City, ST or ZIP" required />
+                  <input type="text" name="pickup_where" placeholder="City, ST or ZIP" required />
                 </div>
               </div>
               <div className="two">
                 <div className="field">
                   <label>Delivery — time &amp; date</label>
-                  <input type="text" placeholder="e.g. Jun 25, 2:00 PM" required />
+                  <input type="text" name="delivery_when" placeholder="e.g. Jun 25, 2:00 PM" required />
                 </div>
                 <div className="field">
                   <label>Delivery — location / ZIP</label>
-                  <input type="text" placeholder="City, ST or ZIP" required />
+                  <input type="text" name="delivery_where" placeholder="City, ST or ZIP" required />
                 </div>
               </div>
             </div>
@@ -331,26 +360,26 @@ function Contact() {
               <div className="two">
                 <div className="field">
                   <label>Commodity</label>
-                  <input type="text" placeholder="What are we hauling?" required />
+                  <input type="text" name="commodity" placeholder="What are we hauling?" required />
                 </div>
                 <div className="field">
                   <label>Weight</label>
-                  <input type="text" placeholder="e.g. 6,000 lbs" required />
+                  <input type="text" name="weight" placeholder="e.g. 6,000 lbs" required />
                 </div>
               </div>
               <div className="field">
                 <label>Dimensions</label>
-                <input type="text" placeholder="L × W × H, or pallet count" required />
+                <input type="text" name="dimensions" placeholder="L × W × H, or pallet count" required />
               </div>
             </div>
 
             <div className="field">
               <label>Your rate <span className="optional">(optional)</span></label>
-              <input type="text" placeholder="Name your rate, or we’ll quote you directly" />
+              <input type="text" name="rate" placeholder="Name your rate, or we’ll quote you directly" />
             </div>
 
             <button className="btn btn-primary" type="submit">
-              Request a quote <Icon.Arrow />
+              <Icon.WhatsApp style={{ width: 18, height: 18 }} /> Send via WhatsApp
             </button>
           </form>
         </Reveal>
@@ -397,6 +426,7 @@ function Footer() {
             <h4>Book a load</h4>
             <ul>
               <li><a href={company.phoneHref}>{company.phone}</a></li>
+              <li><a href={company.whatsappHref} target="_blank" rel="noopener noreferrer">WhatsApp us</a></li>
               <li><a href="#contact">Request a quote</a></li>
               <li>{company.hours}</li>
               <li>{company.region}</li>

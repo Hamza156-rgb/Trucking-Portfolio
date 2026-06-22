@@ -10,6 +10,9 @@ export const company = {
   mc: '1633202',
   phone: '267-678-8860',
   phoneHref: 'tel:+12676788860',
+  // WhatsApp click-to-chat. Digits only, with country code (1 = US).
+  whatsapp: '12676788860',
+  whatsappHref: 'https://wa.me/12676788860',
   email: 'loads@excelhauling.com',     // placeholder
   region: 'Greater Philadelphia · Northeast Corridor',
   hours: 'Mon–Fri · 6:00 AM – 8:00 PM',

@@ -583,6 +583,7 @@ section { position: relative; }
   color: var(--signal); display: grid; place-items: center;
 }
 .contact-info .ic svg { width: 20px; height: 20px; }
+.contact-info .ic-wa { color: #25D366; }
 .contact-info .k {
   font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--steel-2);
