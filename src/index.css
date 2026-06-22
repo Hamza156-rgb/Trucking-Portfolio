@@ -569,7 +569,9 @@ section { position: relative; }
 /* ============================================================
    CONTACT
    ============================================================ */
-.contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; }
+.contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: start; }
+.contact-grid > * { min-width: 0; }
+.contact-info { position: sticky; top: 96px; }
 .contact-info .row {
   display: flex; gap: 16px; align-items: flex-start;
   padding: 20px 0; border-bottom: 1px solid var(--line-dark);
@@ -696,6 +698,7 @@ section { position: relative; }
   .cards, .quotes { grid-template-columns: 1fr 1fr; }
   .steps { grid-template-columns: repeat(2,1fr); }
   .equip, .coverage, .contact-grid, .footer-top { grid-template-columns: 1fr; gap: 36px; }
+  .contact-info { position: static; top: auto; }
   .nav-links { display: none; }
   .menu-btn { display: inline-flex; }
   .nav.open .nav-links {
@@ -710,6 +713,8 @@ section { position: relative; }
   .cards, .quotes, .steps, .stats { grid-template-columns: 1fr; }
   .stat { border-right: 0 !important; border-bottom: 1px solid var(--line-dark); }
   .form .two { grid-template-columns: 1fr; }
+  .form { padding: 22px; }
+  .contact-info .v { font-size: 17px; word-break: break-word; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
 
